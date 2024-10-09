@@ -1,8 +1,7 @@
 import View from './View';
 import icons from 'url:../../img/icons.svg';
-
-// 移除靜態導入
-// import { Fraction } from 'fractional';
+import { Fraction } from 'fractional';
+// console.log(Fraction);
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
@@ -127,10 +126,7 @@ class RecipeView extends View {
         `;
   }
 
-  async _generateMarkupIngredient(ing) {
-    // 動態導入 Fraction
-    const { Fraction } = await import('fractional');
-
+  _generateMarkupIngredient(ing) {
     return `
        <li class="recipe__ingredient">
       <svg class="recipe__icon">
